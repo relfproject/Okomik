@@ -5,125 +5,110 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manhwa - Okomik</title>
+    <link rel="icon" type="image/png" href="image/6.png">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="icon" type="image/png" href="image/Logo Fesyen Bulat Klasik Krem (1).png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7fa;
+            padding: 20px;
+        }
+
+        .card-komik {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            background: #fff;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .card-komik:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-komik img {
+            border-radius: 12px 12px 0 0;
+            height: 280px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .card-komik .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: #333;
+        }
+
+        .card-komik .card-text {
+            font-size: 0.9rem;
+            color: #666;
+            height: 72px;
+            overflow: hidden;
+        }
+
+        .card-komik .btn-primary {
+            background-color: #007bff;
+            border-radius: 8px;
+            border: none;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .card-komik .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 
 <body>
     <!-- Navbar -->
-    <section>
-        <nav class="navbar navbar-light bg-light">
-            <div class="container">
-                <div class="row w-100 align-items-center">
-                    <div class="col-4 text-start">
-                        <a class="navbar-brand fw-bold" href="index.php">Okomik</a>
-                    </div>
-                    <div class="col-4 text-center">
-                        <ul class="nav justify-content-center">
-                            <a class="nav-link" href="manga.php">Manga</a>
-                            <a class="nav-link" href="manhwa.php">Manhwa</a>
-                        </ul>
-                    </div>
-                    <div class="col-4 text-end">
-                        <form class="d-inline-flex">
-                            <input class="form-control me-2" type="search" placeholder="Cari Komik" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                    </div>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <div class="row w-100 align-items-center">
+                <div class="col-4 text-start">
+                    <a class="navbar-brand fw-bold" href="index.php">Okomik</a>
+                </div>
+                <div class="col-4 text-center">
+                    <ul class="nav justify-content-center">
+                        <a class="nav-link" href="manga.php">Manga</a>
+                        <a class="nav-link" href="manhwa.php">Manhwa</a>
+                    </ul>
+                </div>
+                <div class="col-4 text-end">
+                    <form class="d-inline-flex" id="searchForm">
+                        <input class="form-control me-2" type="search" placeholder="Cari Komik" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
                 </div>
             </div>
-        </nav>
-    </section>
+        </div>
+    </nav>
 
-    <!-- Filter Button -->
+    <!-- Filter Buttons -->
     <section class="p-3 container d-flex flex-wrap justify-content-center align-items-center gap-2">
         <a href="index.php" class="btn btn-light">Okomik</a>
         <a href="manga.php" class="btn btn-light">Manga</a>
         <a href="manhwa.php" class="btn btn-light">Manhwa</a>
     </section>
 
-    <!-- Hasil pencarian -->
+    <!-- Search Results -->
     <div class="container mt-4">
         <div id="search-results" class="row"></div>
     </div>
 
-    <!-- Daftar Komik Manhwa -->
+    <!-- Manhwa List -->
     <div id="manhwa">
         <div class="container mt-4">
-            <div class="row">
-                <h3>Manhwa</h3>
-                <!-- Di sini kamu bisa tambahkan komik khusus manga -->
-                <div class="row">
-                    <section class="d-flex flex-wrap justify-content-center gap-3 card-container">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="image/The Extras Academy Survival Guide.jpeg" alt="">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">The Extra's Academy Survival Guide</h5>
-                                <p class="card-text">Seorang figuran di akademi elit berusaha bertahan hidup di tengah
-                                    intrik, sihir, dan ancaman takdir.</p>
-                                <a href="baca.php?komik=extra-academy" class="btn btn-primary mt-auto">Baca</a>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="image/Magic Academys Genius Blinker.jpeg" alt="">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">Magic Academy's Genius Blinker</h5>
-                                <p class="card-text">Seorang murid jenius di akademi sihir yang punya kemampuan aneh
-                                    namun sangat kuat.</p>
-                                <a href="baca.php?komik=magic-genius" class="btn btn-primary mt-auto">Baca</a>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="image/The beginnng after the end.jpeg" alt="">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">The Beginnng After The End</h5>
-                                <p class="card-text">Raja reinkarnasi di dunia sihir baru yang mengejar kehidupan kedua
-                                    dengan kekuatan luar biasa.</p>
-                                <a href="baca.php?komik=beginning-after-end" class="btn btn-primary mt-auto">Baca</a>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="image/Player.jpeg" alt="">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">Player</h5>
-                                <p class="card-text">Seorang pemain yang kembali dari kematian dan berusaha menaklukkan
-                                    dunia game realistis demi balas dendam dan kekuatan.</p>
-                                <a href="baca.php?komik=player" class="btn btn-primary mt-auto">Baca</a>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="image/Swordmaster's Youngest Son.jpeg" alt="">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">Swordmaster's Youngest Son</h5>
-                                <p class="card-text">Putra bungsu keluarga pendekar pedang yang diremehkan, kembali ke
-                                    masa lalu untuk memperbaiki nasibnya dan menjadi terkuat.</p>
-                                <a href="baca.php?komik=swordmasters-youngest-son"
-                                    class="btn btn-primary mt-auto">Baca</a>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="image/The World’s Best Engineer.jpeg" alt="">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">The World’s Best Engineer</h5>
-                                <p class="card-text">Seorang insinyur jenius di dunia fantasi yang menciptakan alat-alat
-                                    hebat demi mengubah nasib kerajaan.</p>
-                                <a href="baca.php?komik=engineer" class="btn btn-primary mt-auto">Baca</a>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="image/The Novel’s Extra (Remake).png" alt="">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">The Novel’s Extra (Remake)</h5>
-                                <p class="card-text">Seorang penulis yang tiba-tiba terjebak sebagai karakter sampingan
-                                    di
-                                    novelnya sendiri, berjuang untuk bertahan hidup dan mengubah jalan cerita demi
-                                    keuntungannya.</p>
-                                <a href="baca.php?komik=novels-extra" class="btn btn-primary mt-auto">Baca</a>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
+            <h3>Manhwa</h3>
+            <div class="row d-flex flex-wrap justify-content-center gap-3" id="manhwa-list"></div>
         </div>
     </div>
 
@@ -143,54 +128,67 @@
         </div>
     </footer>
 
-    <!-- Script Pencarian -->
+    <!-- Script Pencarian dan Render -->
     <script>
         const komikList = [
             {
-                title: "The Novel’s Extra (Remake)",
-                img: "image/The Novel’s Extra (Remake).png",
-                description: "Seorang penulis yang terjebak dalam novelnya sendiri, berjuang untuk mengubah takdir sebagai karakter sampingan.",
-                link: "baca.php?komik=novels-extra"
-            },
-            {
-                title: "The World’s Best Engineer",
-                img: "image/engineer.jpeg",
-                description: "Seorang insinyur jenius di dunia fantasi yang menciptakan alat-alat hebat demi mengubah nasib kerajaan.",
-                link: "baca.php?komik=engineer"
-            },
-            {
-                title: "Swordmaster's Youngest Son",
-                img: "image/Swordmaster's Youngest Son.jpeg",
-                description: "Putra bungsu keluarga pendekar pedang yang diremehkan, kembali ke masa lalu untuk memperbaiki nasibnya dan menjadi terkuat.",
-                link: "baca.php?komik=swordmasters-youngest-son"
-            },
-            {
-                title: "Player",
-                img: "image/Player.jpeg",
-                description: "Seorang pemain yang kembali dari kematian dan berusaha menaklukkan dunia game realistis demi balas dendam dan kekuatan.",
-                link: "baca.php?komik=player"
-            },
-            {
-                title: "The Beginnng After The End",
-                img: "image/The beginnng after the end.jpeg",
-                description: "Raja reinkarnasi di dunia sihir baru yang mengejar kehidupan kedua dengan kekuatan luar biasa.",
-                link: "baca.php?komik=beginning-after-end"
+                title: "The Extra's Academy Survival Guide",
+                img: "image/17.jpeg",
+                description: "Seorang figuran di akademi elit berusaha bertahan hidup di tengah intrik, sihir, dan ancaman takdir.",
+                link: "baca.php?komik=extra-academy"
             },
             {
                 title: "Magic Academy's Genius Blinker",
-                img: "image/Magic Academys Genius Blinker.jpeg",
+                img: "image/8.jpeg",
                 description: "Seorang murid jenius di akademi sihir yang punya kemampuan aneh namun sangat kuat.",
                 link: "baca.php?komik=magic-genius"
             },
             {
-                title: "The Extra's Academy Survival Guide",
-                img: "image/The Extras Academy Survival Guide.jpeg",
-                description: "Seorang figuran di akademi elit berusaha bertahan hidup di tengah intrik, sihir, dan ancaman takdir.",
-                link: "baca.php?komik=extra-academy"
+                title: "The Beginning After The End",
+                img: "image/14.jpeg",
+                description: "Raja reinkarnasi di dunia sihir baru yang mengejar kehidupan kedua dengan kekuatan luar biasa.",
+                link: "baca.php?komik=beginning-after-end"
+            },
+            {
+                title: "Player",
+                img: "image/11.jpeg",
+                description: "Seorang pemain yang kembali dari kematian dan berusaha menaklukkan dunia game realistis demi balas dendam dan kekuatan.",
+                link: "baca.php?komik=player"
+            },
+            {
+                title: "Swordmaster's Youngest Son",
+                img: "image/13.jpeg",
+                description: "Putra bungsu keluarga pendekar pedang yang diremehkan, kembali ke masa lalu untuk memperbaiki nasibnya dan menjadi terkuat.",
+                link: "baca.php?komik=swordmasters-youngest-son"
+            },
+            {
+                title: "The World’s Best Engineer",
+                img: "image/3.jpeg",
+                description: "Seorang insinyur jenius di dunia fantasi yang menciptakan alat-alat hebat demi mengubah nasib kerajaan.",
+                link: "baca.php?komik=engineer"
+            },
+            {
+                title: "The Novel’s Extra (Remake)",
+                img: "image/18.png",
+                description: "Seorang penulis yang terjebak sebagai karakter sampingan di novelnya sendiri, berjuang untuk bertahan hidup dan mengubah jalan cerita demi keuntungannya.",
+                link: "baca.php?komik=novels-extra"
             }
         ];
 
-        document.querySelector('form').addEventListener('submit', function (e) {
+        const listContainer = document.getElementById('manhwa-list');
+        komikList.forEach(item => {
+            listContainer.innerHTML += `
+                <div class="card card-komik" style="width: 18rem;">
+                    <img src="${item.img}" alt="${item.title}">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">${item.title}</h5>
+                        <p class="card-text">${item.description}</p>
+                        <a href="${item.link}" class="btn btn-primary mt-auto">Baca</a>
+                    </div>
+                </div>`;
+        });
+
+        document.querySelector('#searchForm').addEventListener('submit', function (e) {
             e.preventDefault();
             const query = document.querySelector('input[type=search]').value.toLowerCase().trim();
             const results = komikList.filter(item => item.title.toLowerCase().includes(query));
@@ -222,7 +220,6 @@
             }
         });
     </script>
-
 </body>
 
 </html>

@@ -16,7 +16,7 @@ $komikList = [
     ],
     'magic-genius' => [
         'title' => "Magic Academy’s Genius Blinker",
-        'img' => 'image/8r.jpeg',
+        'img' => 'image/8.jpeg',
         'desc' => 'Magic Academy’s Genius Blinker adalah manhwa sihir-akademi tentang murid dengan kekuatan unik yang mengacaukan tatanan dunia sihir.',
         'sinopsis' => 'Di dunia di mana bakat sihir menentukan masa depan, seorang murid muncul dengan kekuatan yang tak bisa diklasifikasikan—Blink. Tak terduga dan tak terukur, kekuatan ini menjadi pusat perhatian, rasa takut, dan kekaguman. Dalam akademi penuh persaingan dan misteri, sang Blinker menghadapi tantangan dari luar dan dalam untuk mengungkap kebenaran di balik kekuatannya dan warisan yang ia bawa.',
         'author' => 'Unknown',

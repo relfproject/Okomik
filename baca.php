@@ -228,7 +228,7 @@ $komik = $komikList[$slug] ?? null;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $komik ? $komik['title'] : 'Komik tidak ditemukan' ?> - Okomik</title>
-    <link rel="icon" type="image/png" href="image/Logo Fesyen Bulat Klasik Krem (1).png">
+    <link rel="icon" type="image/png" href="image/6.png">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <style>
         .badge {
@@ -249,43 +249,74 @@ $komik = $komikList[$slug] ?? null;
             width: 40%;
         }
 
-        .chapter-list li {
-            margin-bottom: 5px;
+        .chapter-list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
         }
+
+        .chapter-item {
+            border-bottom: 1px solid #333;
+            padding: 15px 20px;
+            transition: background-color 0.2s ease;
+        }
+
+        .chapter-item:hover {
+            background-color: #2a2a2a;
+        }
+
+        .chapter-title {
+            font-size: 16px;
+        }
+
+        .chapter-date {
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7fa;
+            padding: 20px;
+        }
+        
     </style>
 </head>
 
 <body>
-    <section>
-        <nav class="navbar navbar-light bg-light">
-            <div class="container">
-                <div class="row w-100 align-items-center">
-                    <div class="col-4 text-start">
-                        <a class="navbar-brand fw-bold" href="index.php">Okomik</a>
-                    </div>
-                    <div class="col-4 text-center">
-                        <ul class="nav justify-content-center">
-                            <a class="nav-link" href="manga.php">Manga</a>
-                            <a class="nav-link" href="manhwa.php">Manhwa</a>
-                        </ul>
-                    </div>
-                    <div class="col-4 text-end">
-                        <form class="d-flex" role="search" action="search.php" method="GET">
-                            <input class="form-control me-2" type="search" name="q" placeholder="Cari Komik"
-                                aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                    </div>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <div class="row w-100 align-items-center">
+                <div class="col-4 text-start">
+                    <a class="navbar-brand fw-bold" href="index.php">Okomik</a>
+                </div>
+                <div class="col-4 text-center">
+                    <ul class="nav justify-content-center">
+                        <a class="nav-link" href="manga.php">Manga</a>
+                        <a class="nav-link" href="manhwa.php">Manhwa</a>
+                    </ul>
+                </div>
+                <div class="col-4 text-end">
+                    <form class="d-inline-flex" id="searchForm">
+                        <input class="form-control me-2" type="search" placeholder="Cari Komik" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
                 </div>
             </div>
-        </nav>
-    </section>
+        </div>
+    </nav>
 
+    <!-- Filter Buttons -->
     <section class="p-3 container d-flex flex-wrap justify-content-center align-items-center gap-2">
         <a href="index.php" class="btn btn-light">Okomik</a>
         <a href="manga.php" class="btn btn-light">Manga</a>
         <a href="manhwa.php" class="btn btn-light">Manhwa</a>
     </section>
+
+    <!-- Search Results -->
+    <div class="container mt-4">
+        <div id="search-results" class="row"></div>
+    </div>
 
     <div class="container py-5">
         <?php if ($komik): ?>
@@ -369,11 +400,13 @@ $komik = $komikList[$slug] ?? null;
 
             <div class="tab-content border p-3">
                 <div class="tab-pane fade show active" id="chapter">
-                    <ul class="chapter-list">
+                    <ul class="chapter-list list-group">
                         <?php foreach ($komik['chapters'] as $ch): ?>
-                            <li>
-                                <a href="read.php?komik=<?= urlencode($slug) ?>&chapter=<?= urlencode($ch) ?>">
-                                    <?= htmlspecialchars($ch) ?>
+                            <li class="list-group-item chapter-item bg-white">
+                                <a href="read.php?komik=<?= urlencode($slug) ?>&chapter=<?= urlencode($ch) ?>"
+                                    class="chapter-link d-block text-dark text-decoration-none">
+                                    <div class="chapter-title fw-bold"><?= htmlspecialchars($ch) ?></div>
+                                    <div class="chapter-date text-muted small">Tanggal Rilis Tidak Ditentukan</div>
                                 </a>
                             </li>
                         <?php endforeach; ?>
