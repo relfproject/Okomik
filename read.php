@@ -10,22 +10,24 @@ if (!isset($komikList[$slug])) {
 }
 
 $komik = $komikList[$slug];
+
+// Ambil daftar chapter (array biasa)
 $chapters = $komik['chapters'];
-sort($chapters); // Urutkan chapter secara ascending
+sort($chapters, SORT_NATURAL); 
 
 if (!in_array($chapter, $chapters)) {
     echo "Chapter tidak ditemukan.";
     exit;
 }
 
-// Navigasi Chapter
+// Navigasi chapter
 $currentIndex = array_search($chapter, $chapters);
 $prevChapter = $chapters[$currentIndex - 1] ?? null;
 $nextChapter = $chapters[$currentIndex + 1] ?? null;
 
 // Folder gambar
-$chapterNumber = strtolower(str_replace('Chapter ', '', $chapter));
-$chapterNumber = str_pad($chapterNumber, 2, '0', STR_PAD_LEFT);
+$chapterNumber = strtolower(str_replace('chapter ', '', $chapter)); 
+$chapterNumber = str_pad($chapterNumber, 2, '0', STR_PAD_LEFT); 
 $chapterFolder = "chapter/{$slug}/{$chapterNumber}/";
 $images = [];
 
@@ -36,18 +38,9 @@ if (is_dir($chapterFolder)) {
             $images[] = $chapterFolder . $file;
         }
     }
-    sort($images);
+    sort($images, SORT_NATURAL);
 }
 ?>
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Okomik</title>
-    <link rel="icon" type="image/png" href="image/6.png">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-</head>
-
 <!DOCTYPE html>
 <html lang="id">
 
@@ -55,6 +48,7 @@ if (is_dir($chapterFolder)) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($komik['title']) . ' - ' . htmlspecialchars($chapter) ?></title>
+    <link rel="icon" type="image/png" href="image/6.png">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <style>
         body {
@@ -154,12 +148,14 @@ if (is_dir($chapterFolder)) {
         <div class="chapter-nav mt-4">
             <?php if ($prevChapter): ?>
                 <a class="btn btn-secondary"
-                    href="read.php?komik=<?= urlencode($slug) ?>&chapter=<?= urlencode($prevChapter) ?>">← Sebelumnya</a>
+                    href="read.php?komik=<?= urlencode($slug) ?>&chapter=<?= urlencode($prevChapter) ?>">←
+                    <?= htmlspecialchars($prevChapter) ?></a>
             <?php endif; ?>
 
             <?php if ($nextChapter): ?>
                 <a class="btn btn-secondary"
-                    href="read.php?komik=<?= urlencode($slug) ?>&chapter=<?= urlencode($nextChapter) ?>">Selanjutnya →</a>
+                    href="read.php?komik=<?= urlencode($slug) ?>&chapter=<?= urlencode($nextChapter) ?>"><?= htmlspecialchars($nextChapter) ?>
+                    →</a>
             <?php endif; ?>
         </div>
     </div>

@@ -172,8 +172,39 @@
                 img: "image/18.png",
                 description: "Seorang penulis yang terjebak sebagai karakter sampingan di novelnya sendiri, berjuang untuk bertahan hidup dan mengubah jalan cerita demi keuntungannya.",
                 link: "baca.php?komik=novels-extra"
+            },
+            {
+                title: "Academy’s Undercover Professor",
+                img: "image/24.jpg",
+                description: "Pria misterius menyamar sebagai profesor sihir dan menyembunyikan identitas aslinya.",
+                link: "baca.php?komik=undercover-professor"
+            },
+            {
+                title: "Eleceed",
+                img: "image/25.jpg",
+                description: "Remaja berhati baik dan kucing misterius melawan musuh dengan kekuatan supernatural.",
+                link: "baca.php?komik=eleceed"
+            },
+            {
+                title: "Return Of The Mount Hua Sect",
+                img: "image/26.jpg",
+                description: "Pendekar legendaris bereinkarnasi dan berusaha membangkitkan kembali sektenya yang runtuh.",
+                link: "baca.php?komik=mount-hua"
+            },
+            {
+                title: "Lightning Degree",
+                img: "image/28.gif",
+                description: "Anak yatim dibesarkan sekte rahasia dan tumbuh menjadi pendekar kilat penuh tekad.",
+                link: "baca.php?komik=lightning-degree"
+            },
+            {
+                title: "The Regressed Son of a Duke is an Assassin",
+                img: "image/19.png",
+                description: "Putra bangsawan yang dikhianati kembali ke masa lalu dan menjadi pembunuh elit untuk balas dendam.",
+                link: "baca.php?komik=regressed-duke-assassin"
             }
         ];
+
 
         const listContainer = document.getElementById('manhwa-list');
         komikList.forEach(item => {

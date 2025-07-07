@@ -172,6 +172,38 @@
                         <a href="baca.php?komik=albus" class="btn btn-primary mt-auto">Baca</a>
                     </div>
                 </div>
+                <div class="card card-komik" style="width: 18rem;">
+                    <img src="image/20.jpg" alt="Mission: Yozakura Family">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Mission: Yozakura Family</h5>
+                        <p class="card-text">Mission: Yozakura Family mengisahkan Taiyo, remaja biasa yang menikah dengan gadis dari keluarga mata-mata dan terlibat dalam kehidupan penuh aksi dan rahasia.</p>
+                        <a href="baca.php?komik=yozakura" class="btn btn-primary mt-auto">Baca</a>
+                    </div>
+                </div>
+                <div class="card card-komik" style="width: 18rem;">
+                    <img src="image/22.jpg" alt="DANDADAN">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">DANDADAN</h5>
+                        <p class="card-text">Dandadan adalah manga aksi-supernatural yang mengikuti dua remaja, **Momo** dan **Okarun**, yang awalnya berdebat tentang hal supranatural dan alien. Saat mencoba membuktikan keyakinan masing-masing, mereka justru terlibat dalam konflik aneh yang melibatkan **roh, alien, dan kekuatan misterius**, memaksa mereka bekerja sama untuk bertahan.</p>
+                        <a href="baca.php?komik=dandadan" class="btn btn-primary mt-auto">Baca</a>
+                    </div>
+                </div>
+                <div class="card card-komik" style="width: 18rem;">
+                    <img src="image/23.jpg" alt="A Breakthrough Brought by Forbidden Master and Disciple">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">A Breakthrough Brought by Forbidden Master and Disciple</h5>
+                        <p class="card-text">A Breakthrough Brought by Forbidden Master and Disciple menceritakan tentang Belgrieve, seorang mantan petualang yang dibuang dari partainya karena dianggap lemah. Namun, nasibnya berubah setelah bertemu dan berlatih dengan mantan raja iblis, guru terlarang yang memberinya kekuatan luar biasa untuk membalas dendam dan bangkit kembali.</p>
+                        <a href="baca.php?komik=A Breakthrough Brought by Forbidden Master and Disciple" class="btn btn-primary mt-auto">Baca</a>
+                    </div>
+                </div>
+                <div class="card card-komik" style="width: 18rem;">
+                    <img src="image/21.jpg" alt="Grand Blue">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Grand Blue</h5>
+                        <p class="card-text">Grand Blue adalah manga komedi yang mengikuti kehidupan **Iori Kitahara**, seorang mahasiswa baru yang pindah ke kota pantai dan bergabung dengan klub diving. Alih-alih kehidupan kampus yang tenang, ia malah terjebak dalam dunia penuh pesta gila, alkohol, dan teman-teman aneh, sambil sesekali... menyelam.</p>
+                        <a href="baca.php?komik=grandblue" class="btn btn-primary mt-auto">Baca</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

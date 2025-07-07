@@ -118,6 +118,19 @@
         <div class="row justify-content-center g-4" id="rilisan-list"></div>
     </section>
 
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center" id="pagination">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -140,19 +153,30 @@
             { title: "The Extra's Academy Survival Guide", img: "image/17.jpeg", description: "Seorang figuran di akademi elit berusaha bertahan hidup di tengah intrik, sihir, dan ancaman takdir.", link: "baca.php?komik=extra-academy" },
             { title: "Magic Academy's Genius Blinker", img: "image/8.jpeg", description: "Seorang murid jenius di akademi sihir yang punya kemampuan aneh namun sangat kuat.", link: "baca.php?komik=magic-genius" },
             { title: "Gotoubun no Hanayome", img: "image/5.jpeg", description: "Seorang siswa menjadi tutor bagi lima saudari kembar dengan kepribadian berbeda.", link: "baca.php?komik=gotoubun" },
+            { title: "Mission: Yozakura Family", img: "image/20.jpg", description: "Taiyo menikah dengan gadis dari keluarga mata-mata dan terlibat dalam dunia penuh aksi dan rahasia.", link: "baca.php?komik=yozakura" },
             { title: "The Danger in My Hearth", img: "image/15.jpeg", description: "Remaja introvert dengan pikiran gelap diam-diam jatuh cinta pada gadis populer di kelasnya.", link: "baca.php?komik=danger-heart" },
-            { title: "One punch Man", img: "image/10.jpeg", description: "Pahlawan botak super kuat yang selalu mengalahkan musuh dengan sekali pukul.", link: "baca.php?komik=onepunchman" },
-            { title: "Frieren Beyond Journeys End", img: "image/4.jpeg", description: "Kisah penyihir elf panjang umur yang merenungi makna hidup setelah petualangan besar berakhir.", link: "baca.php?komik=frieren" },
-            { title: "The Beginning After The End", img: "image/14.jpeg", description: "Raja reinkarnasi di dunia sihir baru yang mengejar kehidupan kedua dengan kekuatan luar biasa.", link: "baca.php?komik=beginning-after-end" },
+            { title: "One Punch Man", img: "image/10.jpeg", description: "Pahlawan botak super kuat yang selalu mengalahkan musuh dengan sekali pukul.", link: "baca.php?komik=onepunchman" },
+            { title: "Frieren Beyond Journeys End", img: "image/4.jpeg", description: "Penyihir elf panjang umur merenungi makna hidup setelah petualangan besarnya berakhir.", link: "baca.php?komik=frieren" },
+            { title: "The Beginning After The End", img: "image/14.jpeg", description: "Raja reinkarnasi ke dunia sihir baru untuk mengejar kehidupan kedua yang lebih bermakna.", link: "baca.php?komik=beginning-after-end" },
             { title: "One Piece", img: "image/9.jpeg", description: "Petualangan Luffy dan kru bajak lautnya mencari harta legendaris bernama One Piece.", link: "baca.php?komik=onepiece" },
-            { title: "Player", img: "image/11.jpeg", description: "Seorang pemain yang kembali dari kematian dan berusaha menaklukkan dunia game realistis demi balas dendam dan kekuatan.", link: "baca.php?komik=player" },
-            { title: "The Eminence in Shadow", img: "image/16.jpeg", description: "Kisah seorang remaja yang terobsesi menjadi sosok penguasa bayangan.", link: "baca.php?komik=eminence-in-shadow" },
+            { title: "Player", img: "image/11.jpeg", description: "Pemain yang kembali dari kematian dan menaklukkan dunia game demi balas dendam.", link: "baca.php?komik=player" },
+            { title: "The Eminence in Shadow", img: "image/16.jpeg", description: "Remaja yang diam-diam membangun organisasi bayangan demi impiannya jadi penguasa bayangan.", link: "baca.php?komik=eminence-in-shadow" },
+            { title: "Grand Blue", img: "image/21.jpg", description: "Mahasiswa baru terjebak dalam klub diving penuh pesta, alkohol, dan kekacauan.", link: "baca.php?komik=grandblue" },
+            { title: "DANDADAN", img: "image/22.jpg", description: "Dua remaja menghadapi roh dan alien setelah saling membuktikan keyakinan mereka.", link: "baca.php?komik=dandadan" },
+            { title: "A Breakthrough Brought by Forbidden Master and Disciple", img: "image/23.jpg", description: "Petualang yang dibuang mendapatkan kekuatan luar biasa dari guru terlarang untuk bangkit kembali.", link: "baca.php?komik=A Breakthrough Brought by Forbidden Master and Disciple" },
+            { title: "Academy’s Undercover Professor", img: "image/24.jpg", description: "Pria misterius menyamar sebagai profesor sihir dan menyembunyikan identitas aslinya.", link: "baca.php?komik=undercover-professor" },
+            { title: "Eleceed", img: "image/25.jpg", description: "Remaja berhati baik dan kucing misterius melawan musuh dengan kekuatan supernatural.", link: "baca.php?komik=eleceed" },
+            { title: "Return Of The Mount Hua Sect", img: "image/26.jpg", description: "Pendekar legendaris bereinkarnasi dan berusaha membangkitkan kembali sektenya yang runtuh.", link: "baca.php?komik=mount-hua" },
+            { title: "Return of the Frozen Player", img: "image/27.jpg", description: "Pahlawan yang membekukan raja es kembali ke dunia modern setelah lama tersegel.", link: "baca.php?komik=frozen-player" },
+            { title: "Lightning Degree", img: "image/28.gif", description: "Anak yatim dibesarkan sekte rahasia dan tumbuh menjadi pendekar kilat penuh tekad.", link: "baca.php?komik=lightning-degree" },
+            { title: "The Regressed Son of a Duke is an Assassin", img: "image/19.png", description: "Putra bangsawan yang dikhianati kembali ke masa lalu dan menjadi pembunuh elit untuk balas dendam.", link: "baca.php?komik=regressed-duke-assassin" },
             { title: "Shuumatsu no Valkyrie", img: "image/12.jpeg", description: "Pertarungan epik antara para dewa dan manusia legendaris untuk menentukan nasib umat manusia.", link: "baca.php?komik=valkyrie" },
             { title: "Albus Changes the World", img: "image/1.jpeg", description: "Albus memperoleh kekuatan misterius dan bertekad mengubah dunia yang tidak adil.", link: "baca.php?komik=albus" },
-            { title: "The World’s Best Engineer", img: "image/3.jpeg", description: "Insinyur jenius yang bangkit di dunia fantasi untuk membangun kejayaan dari nol.", link: "baca.php?komik=engineer" },
-            { title: "Swordmaster's Youngest Son", img: "image/13.jpeg", description: "Anak bungsu pendekar pedang legendaris yang berjuang membuktikan dirinya.", link: "baca.php?komik=swordmasters-youngest-son" },
+            { title: "The World’s Best Engineer", img: "image/3.jpeg", description: "Insinyur jenius bangkit di dunia fantasi dan membangun kejayaan dari nol.", link: "baca.php?komik=engineer" },
+            { title: "Swordmaster's Youngest Son", img: "image/13.jpeg", description: "Anak bungsu pendekar legendaris berjuang keras membuktikan dirinya.", link: "baca.php?komik=swordmasters-youngest-son" },
             { title: "The Novel’s Extra (Remake)", img: "image/18.png", description: "Penulis yang terjebak dalam novel buatannya dan harus bertahan sebagai karakter figuran.", link: "baca.php?komik=novels-extra" }
         ];
+
 
         const rilisanList = komikList.slice(-5);
 
@@ -212,6 +236,68 @@
                 container.innerHTML = "<p class='text-center'>Komik tidak ditemukan.</p>";
             }
         });
+
+        const itemsPerPage = 8;
+        let currentPage = 1;
+
+        function renderPage(page = 1) {
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const currentItems = komikList.slice(start, end);
+
+            const listContainer = document.getElementById('okomik-list');
+            listContainer.innerHTML = '';
+            currentItems.forEach(item => {
+                listContainer.innerHTML += `
+            <div class="card card-komik" style="width: 18rem;">
+                <img src="${item.img}" alt="${item.title}">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">${item.title}</h5>
+                    <p class="card-text">${item.description}</p>
+                    <a href="${item.link}" class="btn btn-primary mt-auto">Baca</a>
+                </div>
+            </div>`;
+            });
+
+            renderPagination();
+        }
+
+        function renderPagination() {
+            const totalPages = Math.ceil(komikList.length / itemsPerPage);
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+
+            // Previous button
+            pagination.innerHTML += `
+        <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+            <a class="page-link" href="#" onclick="changePage(${currentPage - 1})">Previous</a>
+        </li>`;
+
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                pagination.innerHTML += `
+            <li class="page-item ${i === currentPage ? 'active' : ''}">
+                <a class="page-link" href="#" onclick="changePage(${i})">${i}</a>
+            </li>`;
+            }
+
+            // Next button
+            pagination.innerHTML += `
+        <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+            <a class="page-link" href="#" onclick="changePage(${currentPage + 1})">Next</a>
+        </li>`;
+        }
+
+        function changePage(page) {
+            const totalPages = Math.ceil(komikList.length / itemsPerPage);
+            if (page < 1 || page > totalPages) return;
+            currentPage = page;
+            renderPage(page);
+        }
+
+        // Panggil saat halaman dimuat
+        renderPage(1);
+
     </script>
 </body>
 
