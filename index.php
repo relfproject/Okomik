@@ -65,10 +65,35 @@
         .card-komik .btn-primary:hover {
             background-color: #0056b3;
         }
+
+        .scroll-horizontal {
+            display: flex;
+            overflow-x: auto;
+            gap: 1rem;
+            padding-bottom: 10px;
+            scroll-snap-type: x mandatory;
+        }
+
+        .scroll-horizontal::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .scroll-horizontal::-webkit-scrollbar-thumb {
+            background-color: #ccc;
+            border-radius: 4px;
+        }
+
+        .scroll-horizontal>.card-wrapper {
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            width: 270px;
+            /* Cukup kecil agar 3–4 muat di layar */
+        }
     </style>
 </head>
 
 <body>
+
     <!-- Navbar -->
     <nav class="navbar navbar-light bg-light">
         <div class="container">
@@ -104,6 +129,7 @@
         <div id="search-results" class="row"></div>
     </div>
 
+
     <!-- Daftar Komik -->
     <div id="okomik">
         <div class="container mt-4">
@@ -112,24 +138,23 @@
         </div>
     </div>
 
+
+    <!-- Pagination -->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center" id="pagination"></ul>
+    </nav>
+    
     <!-- Rilisan Terbaru -->
     <section class="container py-4">
         <h5 class="fw-bold mb-4">Okomik Rilisan</h5>
         <div class="row justify-content-center g-4" id="rilisan-list"></div>
     </section>
 
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center" id="pagination">
-            <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1">Previous</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-            </li>
-        </ul>
-    </nav>
+    <!-- Manga Populer -->
+    <section class="container py-4" id="manga-populer-section"></section>
+
+    <!-- Manhwa Populer -->
+    <section class="container py-4" id="manhwa-populer-section"></section>
 
     <!-- Footer -->
     <footer>
@@ -167,7 +192,6 @@
             { title: "Academy’s Undercover Professor", img: "image/24.jpg", description: "Pria misterius menyamar sebagai profesor sihir dan menyembunyikan identitas aslinya.", link: "baca.php?komik=undercover-professor" },
             { title: "Eleceed", img: "image/25.jpg", description: "Remaja berhati baik dan kucing misterius melawan musuh dengan kekuatan supernatural.", link: "baca.php?komik=eleceed" },
             { title: "Return Of The Mount Hua Sect", img: "image/26.jpg", description: "Pendekar legendaris bereinkarnasi dan berusaha membangkitkan kembali sektenya yang runtuh.", link: "baca.php?komik=mount-hua" },
-            { title: "Return of the Frozen Player", img: "image/27.jpg", description: "Pahlawan yang membekukan raja es kembali ke dunia modern setelah lama tersegel.", link: "baca.php?komik=frozen-player" },
             { title: "Lightning Degree", img: "image/28.gif", description: "Anak yatim dibesarkan sekte rahasia dan tumbuh menjadi pendekar kilat penuh tekad.", link: "baca.php?komik=lightning-degree" },
             { title: "The Regressed Son of a Duke is an Assassin", img: "image/19.png", description: "Putra bangsawan yang dikhianati kembali ke masa lalu dan menjadi pembunuh elit untuk balas dendam.", link: "baca.php?komik=regressed-duke-assassin" },
             { title: "Shuumatsu no Valkyrie", img: "image/12.jpeg", description: "Pertarungan epik antara para dewa dan manusia legendaris untuk menentukan nasib umat manusia.", link: "baca.php?komik=valkyrie" },
@@ -177,32 +201,99 @@
             { title: "The Novel’s Extra (Remake)", img: "image/18.png", description: "Penulis yang terjebak dalam novel buatannya dan harus bertahan sebagai karakter figuran.", link: "baca.php?komik=novels-extra" }
         ];
 
+        const mangaPopuler = komikList.filter(k =>
+            k.title.includes("One Piece") || k.title.includes("DANDADAN") || k.title.includes("Gotoubun") || k.title.includes("Frieren") || k.title.includes("Danger") || k.title.includes("Shadow")
+        );
+        const manhwaPopuler = komikList.filter(k =>
+            k.title.includes("Player") || k.title.includes("Mount Hua") || k.title.includes("Swordmaster") || k.title.includes("Regressed") || k.title.includes("Engineer")
+        );
 
-        const rilisanList = komikList.slice(-5);
+        function tampilkanKategori(idContainer, dataList, label) {
+            const container = document.getElementById(idContainer);
+            container.innerHTML = `
+        <h5 class="fw-bold mb-3">${label}</h5>
+        <div class="scroll-horizontal" id="${idContainer}-list"></div>`;
 
-        const listContainer = document.getElementById('okomik-list');
-        komikList.forEach(item => {
-            listContainer.innerHTML += `
-                <div class="card card-komik" style="width: 18rem;">
+            const list = document.getElementById(`${idContainer}-list`);
+            dataList.forEach(item => {
+                list.innerHTML += `
+            <div class="card-wrapper">
+                <div class="card card-komik h-100">
                     <img src="${item.img}" alt="${item.title}">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">${item.title}</h5>
-                        <p class="card-text">${item.description}</p>
-                        <a href="${item.link}" class="btn btn-primary mt-auto">Baca</a>
+                        <h6 class="card-title">${item.title}</h6>
+                        <p class="card-text">${item.description.slice(0, 60)}...</p>
+                        <a href="${item.link}" class="btn btn-sm btn-primary mt-auto">Baca</a>
                     </div>
-                </div>`;
-        });
+                </div>
+            </div>`;
+            });
+        }
 
+
+        const rilisanList = komikList.slice(-5);
+        const listContainer = document.getElementById('okomik-list');
         const rilisanContainer = document.getElementById('rilisan-list');
+
+        function renderPage(page = 1) {
+            const itemsPerPage = 8;
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const currentItems = komikList.slice(start, end);
+            listContainer.innerHTML = '';
+            currentItems.forEach(item => {
+                listContainer.innerHTML += `
+            <div class="card card-komik" style="width: 18rem;">
+                <img src="${item.img}" alt="${item.title}">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">${item.title}</h5>
+                    <p class="card-text">${item.description}</p>
+                    <a href="${item.link}" class="btn btn-primary mt-auto">Baca</a>
+                </div>
+            </div>`;
+            });
+            renderPagination(page);
+        }
+
+        function renderPagination(page) {
+            const itemsPerPage = 8;
+            const totalPages = Math.ceil(komikList.length / itemsPerPage);
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+
+            pagination.innerHTML += `
+    <li class="page-item ${page === 1 ? 'disabled' : ''}">
+      <a class="page-link" href="#" onclick="changePage(${page - 1})">Previous</a>
+    </li>`;
+
+            for (let i = 1; i <= totalPages; i++) {
+                pagination.innerHTML += `
+        <li class="page-item ${i === page ? 'active' : ''}">
+            <a class="page-link" href="#" onclick="changePage(${i})">${i}</a>
+        </li>`;
+            }
+
+            pagination.innerHTML += `
+    <li class="page-item ${page === totalPages ? 'disabled' : ''}">
+        <a class="page-link" href="#" onclick="changePage(${page + 1})">Next</a>
+    </li>`;
+        }
+
+        function changePage(page) {
+            const totalPages = Math.ceil(komikList.length / 8);
+            if (page < 1 || page > totalPages) return;
+            renderPage(page);
+        }
+
         rilisanList.forEach(komik => {
             rilisanContainer.innerHTML += `
-                <div class="col-6 col-sm-4 col-md-2 text-center">
-                    <a href="${komik.link}" class="text-decoration-none text-dark position-relative d-block">
-                        <span class="badge bg-primary position-absolute top-0 start-50 translate-middle-x" style="z-index: 2;">UP 2</span>
-                        <img src="${komik.img}" class="rounded-circle border border-primary mt-4" width="120" height="120" alt="${komik.title}">
-                        <div class="mt-2 small text-truncate" title="${komik.title}">${komik.title}</div>
-                    </a>
-                </div>`;
+    <div class="col-6 col-sm-4 col-md-2 text-center">
+        <a href="${komik.link}" class="text-decoration-none text-dark position-relative d-block">
+            <span class="badge bg-primary position-absolute top-0 start-50 translate-middle-x" style="z-index: 2;">UP 2</span>
+            <img src="${komik.img}" class="rounded-circle border border-primary mt-4" width="120" height="120" alt="${komik.title}">
+            <div class="mt-2 small text-truncate" title="${komik.title}">${komik.title}</div>
+        </a>
+    </div>`;
         });
 
         document.querySelector('#searchForm').addEventListener('submit', function (e) {
@@ -220,16 +311,16 @@
                 allComics.style.display = "none";
                 results.forEach(item => {
                     container.innerHTML += `
-                        <div class="col-md-3 col-sm-6 mb-4">
-                            <div class="card h-100 shadow-sm" style="border-radius: 12px; overflow: hidden;">
-                                <img src="${item.img}" class="card-img-top" alt="${item.title}" style="height: 300px; object-fit: cover;">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title">${item.title}</h5>
-                                    <p class="card-text">${item.description}</p>
-                                    <a href="${item.link}" class="btn btn-primary mt-auto">Baca</a>
-                                </div>
-                            </div>
-                        </div>`;
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card h-100 shadow-sm" style="border-radius: 12px; overflow: hidden;">
+                    <img src="${item.img}" class="card-img-top" alt="${item.title}" style="height: 300px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">${item.title}</h5>
+                        <p class="card-text">${item.description}</p>
+                        <a href="${item.link}" class="btn btn-primary mt-auto">Baca</a>
+                    </div>
+                </div>
+            </div>`;
                 });
             } else {
                 allComics.style.display = "none";
@@ -237,67 +328,10 @@
             }
         });
 
-        const itemsPerPage = 8;
-        let currentPage = 1;
-
-        function renderPage(page = 1) {
-            const start = (page - 1) * itemsPerPage;
-            const end = start + itemsPerPage;
-            const currentItems = komikList.slice(start, end);
-
-            const listContainer = document.getElementById('okomik-list');
-            listContainer.innerHTML = '';
-            currentItems.forEach(item => {
-                listContainer.innerHTML += `
-            <div class="card card-komik" style="width: 18rem;">
-                <img src="${item.img}" alt="${item.title}">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">${item.title}</h5>
-                    <p class="card-text">${item.description}</p>
-                    <a href="${item.link}" class="btn btn-primary mt-auto">Baca</a>
-                </div>
-            </div>`;
-            });
-
-            renderPagination();
-        }
-
-        function renderPagination() {
-            const totalPages = Math.ceil(komikList.length / itemsPerPage);
-            const pagination = document.getElementById('pagination');
-            pagination.innerHTML = '';
-
-            // Previous button
-            pagination.innerHTML += `
-        <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
-            <a class="page-link" href="#" onclick="changePage(${currentPage - 1})">Previous</a>
-        </li>`;
-
-            // Page numbers
-            for (let i = 1; i <= totalPages; i++) {
-                pagination.innerHTML += `
-            <li class="page-item ${i === currentPage ? 'active' : ''}">
-                <a class="page-link" href="#" onclick="changePage(${i})">${i}</a>
-            </li>`;
-            }
-
-            // Next button
-            pagination.innerHTML += `
-        <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
-            <a class="page-link" href="#" onclick="changePage(${currentPage + 1})">Next</a>
-        </li>`;
-        }
-
-        function changePage(page) {
-            const totalPages = Math.ceil(komikList.length / itemsPerPage);
-            if (page < 1 || page > totalPages) return;
-            currentPage = page;
-            renderPage(page);
-        }
-
-        // Panggil saat halaman dimuat
+        // Panggil semuanya
+        tampilkanKategori("manga-populer-section", mangaPopuler, "Baca Manga Populer");
+        tampilkanKategori("manhwa-populer-section", manhwaPopuler, "Baca Manhwa Populer");
         renderPage(1);
-
     </script>
 </body>
 
