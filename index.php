@@ -207,10 +207,10 @@
         ];
 
         const mangaPopuler = komikList.filter(k =>
-            k.title.includes("One Piece") || k.title.includes("DANDADAN") || k.title.includes("Gotoubun") || k.title.includes("Frieren") || k.title.includes("Danger") || k.title.includes("Shadow")
+            k.title.includes("One Piece") || k.title.includes("DANDADAN") || k.title.includes("One Punch Man") || k.title.includes("Frieren") || k.title.includes("Danger") || k.title.includes("Shadow")
         );
         const manhwaPopuler = komikList.filter(k =>
-            k.title.includes("Player") || k.title.includes("Mount Hua") || k.title.includes("Swordmaster") || k.title.includes("Regressed") || k.title.includes("Engineer")
+            k.title.includes("Player") || k.title.includes("Mount Hua") || k.title.includes("Blinker") || k.title.includes("Regressed") || k.title.includes("Engineer") || k.title.includes("Lightning")
         );
 
         function tampilkanKategori(idContainer, dataList, label) {
