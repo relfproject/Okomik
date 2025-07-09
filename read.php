@@ -1,22 +1,27 @@
 <?php
+include 'komik_data.php';
+
 $slug = $_GET['komik'] ?? '';
 $chapter = $_GET['chapter'] ?? '';
 
-include 'komik_data.php';
-
 if (!isset($komikList[$slug])) {
-    echo "Komik tidak ditemukan.";
+    include '404.php';
     exit;
 }
 
 $komik = $komikList[$slug];
+$chapterList = $komik['chapters'] ?? [];
 
-// Ambil daftar chapter (array biasa)
-$chapters = $komik['chapters'];
-sort($chapters, SORT_NATURAL); 
+$validChapter = false;
+foreach ($chapterList as $ch) {
+    if ($ch['name'] === $chapter) {
+        $validChapter = true;
+        break;
+    }
+}
 
-if (!in_array($chapter, $chapters)) {
-    echo "Chapter tidak ditemukan.";
+if (!$validChapter) {
+    include '404.php';
     exit;
 }
 

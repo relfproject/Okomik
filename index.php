@@ -140,21 +140,26 @@
 
 
     <!-- Pagination -->
-    <nav aria-label="Page navigation example">
+    <nav aria-label="Page navigation example" id="pagination-section">
         <ul class="pagination justify-content-center" id="pagination"></ul>
     </nav>
-    
+
     <!-- Rilisan Terbaru -->
-    <section class="container py-4">
+    <section class="container py-4" id="rilisan-section">
         <h5 class="fw-bold mb-4">Okomik Rilisan</h5>
         <div class="row justify-content-center g-4" id="rilisan-list"></div>
     </section>
 
     <!-- Manga Populer -->
-    <section class="container py-4" id="manga-populer-section"></section>
+    <section class="container py-4" id="manga-populer-section">
+        <!-- tampilkanKategori akan isi bagian ini -->
+    </section>
 
     <!-- Manhwa Populer -->
-    <section class="container py-4" id="manhwa-populer-section"></section>
+    <section class="container py-4" id="manhwa-populer-section">
+        <!-- tampilkanKategori akan isi bagian ini -->
+    </section>
+
 
     <!-- Footer -->
     <footer>
@@ -302,31 +307,54 @@
             const results = komikList.filter(item => item.title.toLowerCase().includes(query));
             const allComics = document.getElementById('okomik');
             const container = document.getElementById('search-results');
+
+            // 🔻 Tambahkan referensi ke section yang akan disembunyikan
+            const rilisanSection = document.getElementById('rilisan-section');
+            const mangaSection = document.getElementById('manga-populer-section');
+            const manhwaSection = document.getElementById('manhwa-populer-section');
+            const paginationSection = document.getElementById('pagination-section');
+
+
             container.innerHTML = "";
 
             if (query === "") {
                 allComics.style.display = "block";
+                rilisanSection.style.display = "block";
+                mangaSection.style.display = "block";
+                manhwaSection.style.display = "block";
+                paginationSection.style.display = "block";
                 container.innerHTML = "";
             } else if (results.length) {
                 allComics.style.display = "none";
+                rilisanSection.style.display = "none";
+                mangaSection.style.display = "none";
+                manhwaSection.style.display = "none";
+                paginationSection.style.display = "none";
+
                 results.forEach(item => {
                     container.innerHTML += `
-            <div class="col-md-3 col-sm-6 mb-4">
-                <div class="card h-100 shadow-sm" style="border-radius: 12px; overflow: hidden;">
-                    <img src="${item.img}" class="card-img-top" alt="${item.title}" style="height: 300px; object-fit: cover;">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">${item.title}</h5>
-                        <p class="card-text">${item.description}</p>
-                        <a href="${item.link}" class="btn btn-primary mt-auto">Baca</a>
-                    </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+            <div class="card h-100 shadow-sm" style="border-radius: 12px; overflow: hidden;">
+                <img src="${item.img}" class="card-img-top" alt="${item.title}" style="height: 300px; object-fit: cover;">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">${item.title}</h5>
+                    <p class="card-text">${item.description}</p>
+                    <a href="${item.link}" class="btn btn-primary mt-auto">Baca</a>
                 </div>
-            </div>`;
+            </div>
+        </div>`;
                 });
             } else {
                 allComics.style.display = "none";
+                rilisanSection.style.display = "none";
+                mangaSection.style.display = "none";
+                manhwaSection.style.display = "none";
+                paginationSection.style.display = "none";
                 container.innerHTML = "<p class='text-center'>Komik tidak ditemukan.</p>";
             }
+
         });
+
 
         // Panggil semuanya
         tampilkanKategori("manga-populer-section", mangaPopuler, "Baca Manga Populer");
