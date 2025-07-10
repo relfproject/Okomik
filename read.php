@@ -12,27 +12,24 @@ if (!isset($komikList[$slug])) {
 $komik = $komikList[$slug];
 $chapterList = $komik['chapters'] ?? [];
 
-$validChapter = false;
-foreach ($chapterList as $ch) {
-    if ($ch['name'] === $chapter) {
-        $validChapter = true;
-        break;
-    }
-}
+$validChapter = in_array($chapter, $chapterList);
 
 if (!$validChapter) {
     include '404.php';
     exit;
 }
 
-// Navigasi chapter
-$currentIndex = array_search($chapter, $chapters);
-$prevChapter = $chapters[$currentIndex - 1] ?? null;
-$nextChapter = $chapters[$currentIndex + 1] ?? null;
+// Ambil daftar nama chapter
+$chapters = array_column($chapterList, 'name');
+
+$currentIndex = array_search($chapter, $chapterList);
+$prevChapter = $chapterList[$currentIndex - 1] ?? null;
+$nextChapter = $chapterList[$currentIndex + 1] ?? null;
+
 
 // Folder gambar
-$chapterNumber = strtolower(str_replace('chapter ', '', $chapter)); 
-$chapterNumber = str_pad($chapterNumber, 2, '0', STR_PAD_LEFT); 
+$chapterNumber = strtolower(str_replace('chapter ', '', $chapter));
+$chapterNumber = str_pad($chapterNumber, 2, '0', STR_PAD_LEFT);
 $chapterFolder = "chapter/{$slug}/{$chapterNumber}/";
 $images = [];
 
