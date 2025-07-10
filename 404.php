@@ -49,12 +49,18 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-light sticky-top">
-        <div class="container d-flex justify-content-between align-items-center">
-            <a class="navbar-brand fw-bold" href="index.php">Okomik</a>
-            <div>
-                <a class="nav-link d-inline text-primary" href="manga.php">Manga</a>
-                <a class="nav-link d-inline text-primary" href="manhwa.php">Manhwa</a>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <div class="row w-100 align-items-center">
+                <div class="col-4 text-start">
+                    <a class="navbar-brand fw-bold" href="index.php">Okomik</a>
+                </div>
+                <div class="col-4 text-center">
+                    <ul class="nav justify-content-center">
+                        <a class="nav-link" href="manga.php">Manga</a>
+                        <a class="nav-link" href="manhwa.php">Manhwa</a>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>

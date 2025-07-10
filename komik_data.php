@@ -11,8 +11,8 @@ $komikList = [
         'jenis' => 'Manhwa',
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
-        'tags' => ['Action', 'Adventure', 'Fantasy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'tags' => ['Action', 'Adventure', 'Fantasy', 'School life', 'Drama'],
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(0, 10)),
     ],
     'magic-genius' => [
         'title' => "Magic Academy’s Genius Blinker",
@@ -25,8 +25,8 @@ $komikList = [
         'jenis' => 'Manhwa',
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
-        'tags' => ['Action', 'Adventure', 'Fantasy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'tags' => ['Action', 'Fantasy', 'Drama', 'School life'],
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'gotoubun' => [
         'title' => "Gotoubun no Hanayome",
@@ -39,8 +39,8 @@ $komikList = [
         'jenis' => 'Manga',
         'cara' => 'Kanan ke Kiri',
         'indonesia' => 'Kembar Lima',
-        'tags' => ['Romance', 'Comedy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'tags' => ['Romance', 'Comedy', 'School life'],
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'danger-heart' => [
         'title' => "The Danger in My Heart",
@@ -53,8 +53,8 @@ $komikList = [
         'jenis' => 'Manga',
         'cara' => 'Kanan ke Kiri',
         'indonesia' => '-',
-        'tags' => ['Comedy', 'Romance'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'tags' => ['Comedy', 'Romance', 'School life'],
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'onepunchman' => [
         'title' => "One Punch Man",
@@ -67,8 +67,8 @@ $komikList = [
         'jenis' => 'Manga',
         'cara' => 'Kanan ke Kiri',
         'indonesia' => '-',
-        'tags' => ['Action', 'Comedy'],
-        'chapters' => ['Chapter 001', 'Chapter 002']
+        'tags' => ['Action', 'Comedy', 'Adventure', 'Drama'],
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'frieren' => [
         'title' => 'Frieren Beyond Journeys End',
@@ -82,7 +82,7 @@ $komikList = [
         'cara' => 'Kanan ke Kiri',
         'indonesia' => 'Frieren: Setelah Perjalanan Berakhir',
         'tags' => ['Fantasy', 'Adventure', 'Drama'],
-        'chapters' => ['Chapter 001', 'Chapter 002']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'beginning-after-end' => [
         'title' => 'The Beginning After The End',
@@ -95,8 +95,8 @@ $komikList = [
         'jenis' => 'Manhwa',
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
-        'tags' => ['Action', 'Adventure', 'Comedy', 'Fantasy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'tags' => ['Action', 'Adventure'],
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'onepiece' => [
         'title' => 'One Piece',
@@ -110,7 +110,7 @@ $komikList = [
         'cara' => 'Kanan ke Kiri',
         'indonesia' => '-',
         'tags' => ['Action', 'Adventure', 'Comedy', 'Fantasy'],
-        'chapters' => ['Chapter 001', 'Chapter 002']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'player' => [
         'title' => 'Player',
@@ -124,7 +124,7 @@ $komikList = [
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Action', 'Adventure', 'Comedy', 'Fantasy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'eminence-in-shadow' => [
         'title' => 'The Eminence in Shadow',
@@ -138,7 +138,7 @@ $komikList = [
         'cara' => 'Kanan ke Kiri',
         'indonesia' => '-',
         'tags' => ['Action', 'Adventure', 'Fantasy', 'Isekai'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'engineer' => [
         'title' => "The World's Best Engineer",
@@ -152,7 +152,7 @@ $komikList = [
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Action', 'Fantasy', 'Reincarnation'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'swordmasters-youngest-son' => [
         'title' => "Swordmaster's Youngest Son",
@@ -166,7 +166,7 @@ $komikList = [
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Action', 'Adventure', 'Fantasy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'valkyrie' => [
         'title' => 'Shuumatsu no Valkyrie',
@@ -180,7 +180,7 @@ $komikList = [
         'cara' => 'Kanan ke Kiri',
         'indonesia' => '-',
         'tags' => ['Action', 'Drama', 'Fantasy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'albus' => [
         'title' => 'Albus Changes the World',
@@ -194,7 +194,7 @@ $komikList = [
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Action', 'Adventure', 'Fantasy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'novels-extra' => [
         'title' => "The Novel's Extra (Remake)",
@@ -208,63 +208,67 @@ $komikList = [
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Action'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'yozakura' => [
         'title' => "Mission: Yozakura Family",
-        'img' => 'image/20.png',
+        'img' => 'image/20.jpg',
         'desc' => 'Mission: Yozakura Family adalah manga aksi-komedi yang bercerita tentang Taiyo Asano, seorang siswa pemalu yang tanpa sengaja terlibat dengan keluarga mata-mata paling berbahaya di Jepang — keluarga Yozakura.',
         'sinopsis' => 'Taiyo Asano adalah siswa sekolah menengah yang sangat pemalu dan satu-satunya orang yang dapat dia ajak bicara adalah teman masa kecilnya, Mutsumi Yozakura. Ternyata Mutsumi adalah putri dari keluarga mata-mata terkuat! Lebih buruk lagi, Mutsumi diganggu oleh mimpi buruk kakaknya yang terlalu protektif, Kyoichiro. Langkah drastis apa yang harus dilakukan Taiyo untuk menyelamatkan Mutsumi ?! Komedi keluarga mata-mata – misinya dimulai!',
         'author' => 'Gondaira Hitsuji',
-        'genre' => 'Action','Comedy',
+        'genre' => 'Action',
+        'Comedy',
         'umur' => '15+',
-        'jenis' => 'Manga',
+        'jenis' => 'Manhwa',
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
-        'tags' => ['Action','Comedy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'tags' => ['Action', 'Comedy'],
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'dandadan' => [
         'title' => "DANDADAN",
-        'img' => 'image/22.png',
+        'img' => 'image/22.jpg',
         'desc' => 'Dandadan: Aksi supernatural penuh komedi yang mengikuti dua remaja menghadapi alien dan roh setelah saling membuktikan keyakinan aneh mereka.',
         'sinopsis' => 'Ken Takakura, seorang anak laki-laki yang merupakan fanatik okultisme yang tidak percaya pada hantu, dan Momo Ayase, seorang gadis yang tidak percaya pada alien, menghadapi keanehan luar biasa yang melampaui saling pengertian mereka…! Sebuah cerita okultisme yang tidak biasa!',
         'author' => 'TATSU Yukinobu',
         'genre' => 'Comedy',
         'umur' => '15+',
-        'jenis' => 'Manga',
+        'jenis' => 'Manhwa',
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Comedy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'A Breakthrough Brought by Forbidden Master and Disciple' => [
         'title' => "A Breakthrough Brought by Forbidden Master and Disciple",
-        'img' => 'image/23.png',
+        'img' => 'image/23.jpg',
         'desc' => 'A Breakthrough Brought by Forbidden Master and Disciple: Kisah mantan pahlawan yang dibuang, lalu bangkit kembali dengan kekuatan terlarang dari guru yang dianggap berbahaya.',
         'sinopsis' => 'Putra pahlawan dan hantu Raja Iblis adalah Master dan murid!? Eirth, putra pahlawan yang mengalahkan Raja Iblis Besar, bermasalah. Selalu diharapkan untuk mencapai hal-hal besar, tetapi tidak dapat memenuhi harapan itu. Tidak peduli usaha yang dia lakukan, dan hasil yang dia dapatkan, itu tidak pernah cukup bagi mereka. “Aku mengecewakan dibandingkan dengan ayahku” atau “Tidakkah kamu tahu kamu adalah putra pahlawan!!” Hidup setiap hari seperti ini, Eirth memenuhi takdirnya di ruangan yang berisi pedang ayahnya, sang pahlawan. “Menarik. Aku akan melatihmu. Aku hanya punya waktu luang sekarang.” Eirth menerima pelatihan pribadi khusus dari Raja Iblis hanya untuk mendapatkan kembali orang tuanya dan dunia. Dalam beberapa hari mendatang, orang tuanya, para pahlawan masa lalu, cinta pertamanya, teman masa kecil sang putri, para genius zaman itu, dan dunia akan gemetar di hadapannya.',
         'author' => 'ETOU Yona',
-        'genre' => 'Action','Comedy','Adventure',
+        'genre' => 'Action',
+        'Comedy',
+        'Adventure',
         'umur' => '15+',
-        'jenis' => 'Manga',
+        'jenis' => 'Manhwa',
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
-        'tags' => ['Action','Comedy','Adventure'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'tags' => ['Action', 'Comedy', 'Adventure'],
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 18)),
     ],
     'grandblue' => [
         'title' => "Grand Blue",
-        'img' => 'image/21.png',
+        'img' => 'image/21.jpg',
         'desc' => 'Grand Blue: Komedi kampus tentang mahasiswa baru yang terjebak dalam kehidupan penuh pesta, alkohol, dan diving.',
         'sinopsis' => 'Kehidupan baru Kitahara Iori dimulai saat ia memulai karir kuliahnya di dekat lautan di kota Izu, penuh semangat untuk kehidupan barunya. Dia akan pindah ke toko selam Pamannya, “Grand Blue”. Di sana ia menemukan lautan yang indah, wanita cantik, dan pria yang suka menyelam dan alkohol. Akankah Iori bisa menjalani kehidupan kampus impiannya?',
         'author' => 'Gondaira Hitsuji',
-        'genre' => 'Comedy', 'Drama',
+        'genre' => 'Comedy',
+        'Drama',
         'umur' => '15+',
-        'jenis' => 'Manga',
+        'jenis' => 'Manhwa',
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Comedy', 'Drama'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'undercover-professor' => [
         'title' => "Academy’s Undercover Professor",
@@ -272,13 +276,15 @@ $komikList = [
         'desc' => 'Academy’s Undercover Professor: Seorang pria misterius menyamar sebagai profesor sihir dan menyembunyikan identitas aslinya di akademi elit.',
         'sinopsis' => 'Aku tidak dilahirkan kembali dengan bakat ataupun kemampuan, tetapi setidaknya pengetahuanku dari bumi memungkinkanku untuk tetap selangkah lebih maju di dunia lain ini. Sihir ada di sini, dan kemajuan baru dengan cepat dibuat dalam sains sementara perkembangan sihir tersendat karena tradisi. Menggunakan pengetahuan dari kehidupanku sebelumnya dan tidak terikat oleh pemikiran ortodok, aku dapat melakukan hal-hal yang bahkan tidak dapat dibayangkan oleh penyihir lain. Namun, secara tidak sengaja menjadi profesor yang menyamar untuk perkumpulan rahasia misterius di akademi Sören yang terkenal tidak pernah ada dalam daftar tugasku!',
         'author' => 'Sayren, Tana (II)',
-        'genre' => 'Action', 'Adventure', 'Comedy',
+        'genre' => 'Action',
+        'Adventure',
+        'Comedy',
         'umur' => '15+',
         'jenis' => 'Manhwa',
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Action', 'Adventure', 'Comedy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'eleceed' => [
         'title' => "Eleceed",
@@ -286,55 +292,64 @@ $komikList = [
         'desc' => 'Eleceed: Pemuda berhati baik dan kucing misterius bergabung untuk melawan organisasi jahat dengan kekuatan supernatural.',
         'sinopsis' => 'Kaiden – Pengguna kemampuan misterius yang bersembunyi di dalam tubuh kucing jalanan. Dia kemudian dijemput oleh Jiwoo setelah terluka setelah berkelahi dengan pengguna kemampuan lain. Ia memiliki kepribadian yang keras kepala dan suka memerintah. Jiwoo – anak SMA yang energik dan banyak bicara yang suka kucing. Ia sangat baik dan juga tampaknya memiliki kemampuan khusus.',
         'author' => 'Gondaira Hitsuji',
-        'genre' => 'Comedy', 'Drama',
+        'genre' => 'Comedy',
+        'Drama',
         'umur' => '15+',
         'jenis' => 'Manhwa',
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Comedy', 'Drama'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'mount-hua' => [
         'title' => "Return Of The Mount Hua Sect",
-        'img' => 'image/26.png',
+        'img' => 'image/26.jpg',
         'desc' => 'Return of the Mount Hua Sect: Pendekar legendaris reinkarnasi ke masa depan untuk menghidupkan kembali sekte Mount Hua yang telah runtuh.',
-        'sinopsis' => 'Chung Myung Murid ke-13 dari Mount hua sect, salah satu dari 3 swordsman terkuat, “Plum Blossom Sword Saint”, Mengalahkan Chun Ma, yang membawa kehancuran pada dunia ini. setelah pertarungan tersebut, ia menghembuskan nafas terakhirnya di atas gunung tempat mount hua sect berada. dia terlahir kembali 100 tahun kemudian di dalam tubuh seorang anak kecil. ” …Apa” ” Sekte Mount Hua telah hancur?” ” Omong kosong macam apa itu!!?”',
+        'sinopsis' => 'Chung Myung Murid ke-13 dari Mount hua sect, salah satu dari 3 swordsman terkuat, “Plum Blossom Sword Saint”, Mengalahkan Chun Ma, yang membawa kehancuran pada dunia ini. setelah pertarungan tersebut, ia menghembuskan nafas terakhirnya di atas gunung tempat mount hua sect berada. dia terlahir kembali 50 tahun kemudian di dalam tubuh seorang anak kecil. ” …Apa” ” Sekte Mount Hua telah hancur?” ” Omong kosong macam apa itu!!?”',
         'author' => 'Biga',
-        'genre' => 'Action', 'Adventure', 'Comedy', 'Drama',
+        'genre' => 'Action',
+        'Adventure',
+        'Comedy',
+        'Drama',
         'umur' => '15+',
         'jenis' => 'Manhwa',
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Action', 'Adventure', 'Comedy', 'Drama'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'lightning-degree' => [
         'title' => "Lightning Degree",
-        'img' => 'image/28.png',
+        'img' => 'image/28.gif',
         'desc' => 'Lightning Degree: Anak yatim diasuh oleh sekte seni bela diri rahasia dan tumbuh menjadi pendekar kilat penuh tekad.',
         'sinopsis' => 'Ryu-Yeon kehilangan ayahnya karena penyakit ketika dia baru berusia 10 tahun. Dengan keterampilan yang dia pelajari dari ayahnya, dia bisa mengukir kayu menjadi patung yang sangat rumit. Suatu hari, setelah menyelesaikan pahatan orang tuanya, Ryu-Yeon disambut oleh seorang pria lanjut usia yang terkesan dengan pahatannya. Orang tua itu melihat janji pada Ryu-Yeon dan bertanya apakah dia ingin menjadi muridnya. Karena Ryu-Yeon tidak tahu harus kemana dan ingin memaksimalkan hidupnya, dia menerima tawaran lelaki tua itu.',
         'author' => 'Awin; Wuzhou',
-        'genre' => 'Action', 'Adventure', 'Comedy', 'Fantasy',
+        'genre' => 'Action',
+        'Adventure',
+        'Comedy',
+        'Fantasy',
         'umur' => '15+',
         'jenis' => 'Manhwa',
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Action', 'Adventure', 'Comedy', 'Fantasy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'regressed-duke-assassin' => [
         'title' => "The Regressed Son of a Duke is an Assassin",
-        'img' => 'image/21.png',
+        'img' => 'image/19.png',
         'desc' => 'The Regressed Son of a Duke is an Assassin: Putra bangsawan yang dikhianati kembali ke masa lalu dan menjadi pembunuh mematikan untuk membalas dendam.',
         'sinopsis' => 'Cyan Vert, assassin terkuat di benua menemui takdir yang memilukan setelah dikhianati orang yang paling ia percayai, saudaranya sendiri. “Andai aku diberi kesempatan… aku pasti akan menjalani kehidupan yang berbeda.” Aku pasti hanya akan mempercayai dan mencapai segala yang aku inginkan tanpa melayani siapa pun kecuali diriku sendiri. Begitulah aku mendapatan kesempatan kedua, Cyan Vert, bayangan yang hidup untuk melayani orang lain sudah tidak ada. Sekarang, aku akan mengukir sendiri jalanku demi diri sendiri.',
         'author' => '커피라임',
-        'genre' => 'Action', 'Adventure', 'Fantasy',
+        'genre' => 'Action',
+        'Adventure',
+        'Fantasy',
         'umur' => '15+',
         'jenis' => 'Manhwa',
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Action', 'Adventure', 'Fantasy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ]
 ];
 ?>

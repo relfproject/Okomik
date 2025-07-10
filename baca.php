@@ -21,8 +21,8 @@ $komikList = [
         'jenis' => 'Manhwa',
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
-        'tags' => ['Action', 'Adventure', 'Fantasy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'tags' => ['Action', 'Adventure', 'Fantasy', 'School life', 'Drama'],
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(0, 10)),
     ],
     'magic-genius' => [
         'title' => "Magic Academy’s Genius Blinker",
@@ -35,8 +35,8 @@ $komikList = [
         'jenis' => 'Manhwa',
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
-        'tags' => ['Action', 'Adventure', 'Fantasy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'tags' => ['Action', 'Fantasy', 'Drama', 'School life'],
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'gotoubun' => [
         'title' => "Gotoubun no Hanayome",
@@ -49,8 +49,8 @@ $komikList = [
         'jenis' => 'Manga',
         'cara' => 'Kanan ke Kiri',
         'indonesia' => 'Kembar Lima',
-        'tags' => ['Romance', 'Comedy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'tags' => ['Romance', 'Comedy', 'School life'],
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'danger-heart' => [
         'title' => "The Danger in My Heart",
@@ -63,8 +63,8 @@ $komikList = [
         'jenis' => 'Manga',
         'cara' => 'Kanan ke Kiri',
         'indonesia' => '-',
-        'tags' => ['Comedy', 'Romance'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'tags' => ['Comedy', 'Romance', 'School life'],
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'onepunchman' => [
         'title' => "One Punch Man",
@@ -77,8 +77,8 @@ $komikList = [
         'jenis' => 'Manga',
         'cara' => 'Kanan ke Kiri',
         'indonesia' => '-',
-        'tags' => ['Action', 'Comedy'],
-        'chapters' => ['Chapter 001', 'Chapter 002']
+        'tags' => ['Action', 'Comedy', 'Adventure', 'Drama'],
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'frieren' => [
         'title' => 'Frieren Beyond Journeys End',
@@ -92,7 +92,7 @@ $komikList = [
         'cara' => 'Kanan ke Kiri',
         'indonesia' => 'Frieren: Setelah Perjalanan Berakhir',
         'tags' => ['Fantasy', 'Adventure', 'Drama'],
-        'chapters' => ['Chapter 001', 'Chapter 002']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'beginning-after-end' => [
         'title' => 'The Beginning After The End',
@@ -105,8 +105,8 @@ $komikList = [
         'jenis' => 'Manhwa',
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
-        'tags' => ['Action', 'Adventure', 'Comedy', 'Fantasy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'tags' => ['Action', 'Adventure'],
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'onepiece' => [
         'title' => 'One Piece',
@@ -120,7 +120,7 @@ $komikList = [
         'cara' => 'Kanan ke Kiri',
         'indonesia' => '-',
         'tags' => ['Action', 'Adventure', 'Comedy', 'Fantasy'],
-        'chapters' => ['Chapter 001', 'Chapter 002']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'player' => [
         'title' => 'Player',
@@ -134,7 +134,7 @@ $komikList = [
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Action', 'Adventure', 'Comedy', 'Fantasy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'eminence-in-shadow' => [
         'title' => 'The Eminence in Shadow',
@@ -148,7 +148,7 @@ $komikList = [
         'cara' => 'Kanan ke Kiri',
         'indonesia' => '-',
         'tags' => ['Action', 'Adventure', 'Fantasy', 'Isekai'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'engineer' => [
         'title' => "The World's Best Engineer",
@@ -162,7 +162,7 @@ $komikList = [
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Action', 'Fantasy', 'Reincarnation'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'swordmasters-youngest-son' => [
         'title' => "Swordmaster's Youngest Son",
@@ -176,7 +176,7 @@ $komikList = [
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Action', 'Adventure', 'Fantasy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'valkyrie' => [
         'title' => 'Shuumatsu no Valkyrie',
@@ -190,7 +190,7 @@ $komikList = [
         'cara' => 'Kanan ke Kiri',
         'indonesia' => '-',
         'tags' => ['Action', 'Drama', 'Fantasy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'albus' => [
         'title' => 'Albus Changes the World',
@@ -204,7 +204,7 @@ $komikList = [
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Action', 'Adventure', 'Fantasy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'novels-extra' => [
         'title' => "The Novel's Extra (Remake)",
@@ -218,7 +218,7 @@ $komikList = [
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Action'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'yozakura' => [
         'title' => "Mission: Yozakura Family",
@@ -233,7 +233,7 @@ $komikList = [
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Action', 'Comedy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'dandadan' => [
         'title' => "DANDADAN",
@@ -247,7 +247,7 @@ $komikList = [
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Comedy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'A Breakthrough Brought by Forbidden Master and Disciple' => [
         'title' => "A Breakthrough Brought by Forbidden Master and Disciple",
@@ -263,7 +263,7 @@ $komikList = [
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Action', 'Comedy', 'Adventure'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 18)),
     ],
     'grandblue' => [
         'title' => "Grand Blue",
@@ -278,7 +278,7 @@ $komikList = [
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Comedy', 'Drama'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'undercover-professor' => [
         'title' => "Academy’s Undercover Professor",
@@ -294,7 +294,7 @@ $komikList = [
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Action', 'Adventure', 'Comedy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'eleceed' => [
         'title' => "Eleceed",
@@ -309,7 +309,7 @@ $komikList = [
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Comedy', 'Drama'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'mount-hua' => [
         'title' => "Return Of The Mount Hua Sect",
@@ -326,7 +326,7 @@ $komikList = [
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Action', 'Adventure', 'Comedy', 'Drama'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'lightning-degree' => [
         'title' => "Lightning Degree",
@@ -343,7 +343,7 @@ $komikList = [
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Action', 'Adventure', 'Comedy', 'Fantasy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ],
     'regressed-duke-assassin' => [
         'title' => "The Regressed Son of a Duke is an Assassin",
@@ -359,7 +359,7 @@ $komikList = [
         'cara' => 'Bawah ke Atas',
         'indonesia' => '-',
         'tags' => ['Action', 'Adventure', 'Fantasy'],
-        'chapters' => ['Chapter 01', 'Chapter 02']
+        'chapters' => array_map(fn($i) => sprintf("Chapter %02d", $i), range(1, 10)),
     ]
 ];
 
@@ -462,7 +462,7 @@ $komik = $komikList[$slug] ?? null;
         <div id="search-results" class="row"></div>
     </div>
 
-    <div class="container py-5">
+    <div class="container py-10">
         <?php if ($komik): ?>
             <div class="mb-4">
                 <img src="<?= htmlspecialchars($komik['img']) ?>" alt="<?= htmlspecialchars($komik['title']) ?>"
@@ -536,7 +536,7 @@ $komik = $komikList[$slug] ?? null;
                 <?php endforeach; ?>
             </div>
 
-            <ul class="nav nav-tabs mt-5" id="komikTab" role="tablist">
+            <ul class="nav nav-tabs mt-10" id="komikTab" role="tablist">
                 <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#chapter">Chapter</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#sinopsis">Sinopsis</a></li>
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#mirip">Mirip</a></li>
