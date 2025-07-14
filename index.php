@@ -89,6 +89,37 @@
             width: 270px;
             /* Cukup kecil agar 3–4 muat di layar */
         }
+
+        .comic-card {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            height: 100%;
+        }
+
+        .comic-card img {
+            width: 80px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .comic-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .comic-meta {
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+
+        .chapter-btn {
+            font-size: 0.8rem;
+        }
     </style>
 </head>
 
@@ -159,6 +190,99 @@
     <section class="container py-4" id="manhwa-populer-section">
         <!-- tampilkanKategori akan isi bagian ini -->
     </section>
+
+    <!DOCTYPE html>
+    <html lang="id">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Daftar Komik</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+
+    <body style="background:#f7f7f7">
+
+        <div class="container py-4">
+            <!-- Judul Tengah -->
+            <div class="text-center mb-4">
+                <h4 class="fw-bold">Baca Okomik <span class="badge bg-primary">Terbaru</span></h4>
+            </div>
+
+            <!-- Grid Komik -->
+            <div class="row g-3">
+                <!-- Komik Card -->
+                <div class="row g-3">
+                    <!-- Komik 1 -->
+                    <div class="col-md-6">
+                        <div class="card shadow-sm p-2 d-flex flex-row align-items-start">
+                            <img src="image/11.jpeg" class="rounded" style="width:80px; height:100px; object-fit:cover;"
+                                alt="Cover Komik">
+                            <div class="ms-3 flex-grow-1">
+                                <h6 class="mb-1">Player</h6>
+                                <small class="text-muted d-block">Manhwa Fantasy</small>
+                                <a href="read.php?komik=player&chapter=Chapter+10"
+                                    class="btn btn-outline-secondary btn-sm mt-2">Chapter 10</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Komik 2 -->
+                    <div class="col-md-6">
+                        <div class="card shadow-sm p-2 d-flex flex-row align-items-start">
+                            <img src="image/5.jpeg" class="rounded" style="width:80px; height:100px; object-fit:cover;"
+                                alt="Cover Komik">
+                            <div class="ms-3 flex-grow-1">
+                                <h6 class="mb-1">Gotoubun no Hanayome</h6>
+                                <small class="text-muted d-block">Manga Romantis</small>
+                                <a href="read.php?komik=gotoubun&chapter=Chapter+10"
+                                    class="btn btn-outline-secondary btn-sm mt-2">Chapter 10</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tambahkan baris lain -->
+                <div class="row g-3">
+                    <!-- Komik 1 -->
+                    <div class="col-md-6">
+                        <div class="card shadow-sm p-2 d-flex flex-row align-items-start">
+                            <img src="image/8.jpeg" class="rounded" style="width:80px; height:100px; object-fit:cover;"
+                                alt="Cover Komik">
+                            <div class="ms-3 flex-grow-1">
+                                <h6 class="mb-1">Magic Academy's Genius Blinker</h6>
+                                <small class="text-muted d-block">Manhwa Fantasy</small>
+                                <a href="read.php?komik=magic-genius&chapter=Chapter+10"
+                                    class="btn btn-outline-secondary btn-sm mt-2">Chapter 10</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Komik 2 -->
+                    <div class="col-md-6">
+                        <div class="card shadow-sm p-2 d-flex flex-row align-items-start">
+                            <img src="image/15.jpeg" class="rounded" style="width:80px; height:100px; object-fit:cover;"
+                                alt="Cover Komik">
+                            <div class="ms-3 flex-grow-1">
+                                <h6 class="mb-1">The Danger in My Heart</h6>
+                                <small class="text-muted d-block">Manga Romantis</small>
+                                <a href="read.php?komik=danger-heart&chapter=Chapter+10"
+                                    class="btn btn-outline-secondary btn-sm mt-2">Chapter 10</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tombol Lihat Semua -->
+                <div class="text-center mt-3">
+                    <a href="pustaka.php" class="btn btn-outline-primary btn-sm">Cek Update Lainnya →</a>
+                </div>
+
+            </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+    </html>
 
 
     <!-- Footer -->
@@ -361,6 +485,9 @@
         tampilkanKategori("manhwa-populer-section", manhwaPopuler, "Baca Manhwa Populer");
         renderPage(1);
     </script>
+
+
+
 </body>
 
 </html>
